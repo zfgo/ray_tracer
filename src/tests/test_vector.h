@@ -59,8 +59,62 @@ void test_vector_equal()
     };
 
     printf("test_vector_equal(): \t%s\n", ! vector_equal(v1, v2) ? "PASS" : "FAIL");
+}
 
+void test_vector_add()
+{
+    Vector v1 = {
+        .x = 2.3,
+        .y = 3.4,
+        .z = 12.6,
+        .w = 0.0
+    };
 
+    Vector v2 = {
+        .x = 2.3,
+        .y = 3.4,
+        .z = -12.6,
+        .w = 1.0
+    };
+
+    Vector v3 = {
+        .x = 4.6,
+        .y = 6.8,
+        .z = 0.0,
+        .w = 1.0
+    };
+
+    Vector v_out = vector_add(v1, v2);
+
+    printf("test_vector_add(): \t%s\n", vector_equal(v3, v_out) ? "PASS" : "FAIL");
+}
+
+void test_vector_subtract()
+{
+    Vector v1 = {
+        .x = 2.3,
+        .y = 3.4,
+        .z = 1.1,
+        .w = 1.0
+    };
+
+    Vector v2 = {
+        .x = 2.3,
+        .y = 3.4,
+        .z = 1.0,
+        .w = 1.0
+    };
+
+    Vector v3 = {
+        .x = 0.0,
+        .y = 0.0,
+        .z = 0.1,
+        .w = 0.0
+    };
+
+    Vector v_out = vector_subtract(v1, v2);
+
+    printf("test_vector_add(): \t%s\n", vector_equal(v3, v_out) ? "PASS" : "FAIL");
 }
 
 #endif /* _TEST_VECTOR_H_ */
