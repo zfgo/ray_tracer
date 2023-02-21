@@ -56,3 +56,27 @@ Vector vector_negate(Vector v)
 
     return vector_subtract(zero, v);
 }
+
+Vector vector_scalar_multiply(Vector v, float f)
+{
+    Vector v_out = {
+        .x = f * v.x,
+        .y = f * v.y,
+        .z = f * v.z,
+        .w = f * v.w
+    };
+
+    return v_out;
+}
+
+Vector vector_scalar_divide(Vector v, float f)
+{
+    Vector v_out = {
+        .x = v.x / f,
+        .y = v.y / f,
+        .z = v.z / f,
+        .w = v.w / f
+    };
+
+    return v_out;
+}

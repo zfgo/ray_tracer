@@ -37,5 +37,12 @@ Vector vector_subtract(Vector v1, Vector v2);
  */
 Vector vector_negate(Vector v);
 
+/* multiply a vector by a float, and return the result
+ */
+Vector vector_scalar_multiply(Vector v, float f);
+
+/* divide a vector by a float, and return the result
+ */
+Vector vector_scalar_divide(Vector v, float f);
 
 #endif /* _VECTOR_H_ */
