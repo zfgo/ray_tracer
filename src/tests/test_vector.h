@@ -138,6 +138,49 @@ void test_vector_negate()
     printf("test_vector_negate(): \t%s\n", vector_equal(v2, v_out) ? "PASS" : "FAIL");
 }
 
+void test_vector_scalar_multiply()
+{
+    Vector v1 = {
+        .x = 2.3,
+        .y = 3.4,
+        .z = 1.1,
+        .w = 1.0
+    };
+
+    Vector v2 = {
+        .x = 4.6,
+        .y = 6.8,
+        .z = 2.2,
+        .w = 2.0
+    };
+
+    Vector v_out = vector_scalar_multiply(v1, 2.0);
+
+    printf("test_vector_scalar_multiply(): \t%s\n", vector_equal(v2, v_out) ? "PASS" : "FAIL");
+}
+
+
+void test_vector_scalar_divide()
+{
+    Vector v1 = {
+        .x = 4.6,
+        .y = 6.8,
+        .z = 2.2,
+        .w = 2.0
+    };
+
+    Vector v2 = {
+        .x = 2.3,
+        .y = 3.4,
+        .z = 1.1,
+        .w = 1.0
+    };
+
+    Vector v_out = vector_scalar_divide(v1, 2.0);
+
+    printf("test_vector_scalar_multiply(): \t%s\n", vector_equal(v2, v_out) ? "PASS" : "FAIL");
+}
+
 
 
 #endif /* _TEST_VECTOR_H_ */

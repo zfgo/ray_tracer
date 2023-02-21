@@ -10,6 +10,8 @@ int main(void)
     test_vector_add();
     test_vector_subtract();
     test_vector_negate();
+    test_vector_scalar_multiply();
+    test_vector_scalar_divide();
 
     /* include tests */
     test_equal();
