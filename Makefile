@@ -8,12 +8,14 @@ BUILD		= ./build
 
 all: $(PROGRAMS)
 
-main:
-	$(CC) src/main.c -o main $(CFLAGS) $(LIBS)
+main: main.o $(OBJECTS)
+	$(CC) src/main/main.c -o main $(CFLAGS) $(LIBS)
 
-tests:
-	$(CC) tests/tests.c -o tests $(CFLAGS) $(LIBS)
+tests: test_all.o $(OBJECTS)
+	$(CC) src/tests/test_all.c -o tests $(CFLAGS) $(LIBS)
 
+main.o: main.c vector.h
+test_all.o: test_all.c test_vector.h vector.h
 vector.o: vector.c vector.h
 
 clean:
