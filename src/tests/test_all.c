@@ -15,6 +15,7 @@ int main(void)
     test_vector_norm();
     test_vector_normalize();
     test_vector_dot();
+    test_vector_cross();
 
     /* include tests */
     test_equal();
