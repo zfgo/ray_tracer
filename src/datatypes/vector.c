@@ -85,3 +85,17 @@ float vector_norm(Vector v)
 {
     return sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
 }
+
+Vector vector_normalize(Vector v)
+{
+    float norm = vector_norm(v);
+
+    if (norm == 0.0) {
+        // we don't want to have divide by 0 errors
+        return v;
+    }
+
+    Vector v_out = vector_scalar_divide(v, norm);
+
+    return v_out;
+}

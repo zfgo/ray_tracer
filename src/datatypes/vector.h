@@ -47,4 +47,9 @@ Vector vector_scalar_divide(Vector v, float f);
 
 float vector_norm(Vector v);
 
+/* normalize a vector such that it has magnitude one, and return the
+ * result
+  */
+Vector vector_normalize(Vector v);
+
 #endif /* _VECTOR_H_ */
