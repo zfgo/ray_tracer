@@ -25,4 +25,13 @@ bool if_point(Vector v);
  */
 bool if_vector(Vector v);
 
+/* add two vectors, and return the result
+ */
+Vector vector_add(Vector v1, Vector v2);
+
+/* subtract two vectors, and return the result
+ */
+Vector vector_subtract(Vector v1, Vector v2);
+
+
 #endif /* _VECTOR_H_ */
