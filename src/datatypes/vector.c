@@ -80,3 +80,8 @@ Vector vector_scalar_divide(Vector v, float f)
 
     return v_out;
 }
+
+float vector_norm(Vector v)
+{
+    return sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
+}

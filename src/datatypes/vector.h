@@ -45,4 +45,6 @@ Vector vector_scalar_multiply(Vector v, float f);
  */
 Vector vector_scalar_divide(Vector v, float f);
 
+float vector_norm(Vector v);
+
 #endif /* _VECTOR_H_ */
