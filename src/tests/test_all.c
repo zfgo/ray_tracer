@@ -13,6 +13,7 @@ int main(void)
     test_vector_scalar_multiply();
     test_vector_scalar_divide();
     test_vector_norm();
+    test_vector_normalize();
 
     /* include tests */
     test_equal();
