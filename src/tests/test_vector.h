@@ -223,4 +223,48 @@ void test_vector_normalize()
     printf("test_vector_normalize(): \t%s\n", vector_equal(v2, v_out) ? "PASS" : "FAIL");
 }
 
+void test_vector_dot()
+{
+    float f1, f2;
+    Vector v1 = {
+        .x = 1.0,
+        .y = 2.0,
+        .z = 3.0,
+        .w = 0.0
+    };
+
+    Vector v2 = {
+        .x = 2.0,
+        .y = 3.0,
+        .z = 4.0,
+        .w = 0.0
+    };
+
+    f1 = vector_dot(v1, v2);
+
+    printf("test_vector_dot(): \t%s\n", equal(f1, 20.0) ? "PASS" : "FAIL");
+
+    Vector v3 = {
+        .x = 1.0,
+        .y = 0.0,
+        .z = 0.0,
+        .w = 0.0
+    };
+
+    f2 = vector_dot(v3, v3);
+
+    printf("test_vector_dot(): \t%s\n", equal(f2, 1.0) ? "PASS" : "FAIL");
+}
+
+
+
+
+
+
+
+
+
+
+
+
 #endif /* _TEST_VECTOR_H_ */
