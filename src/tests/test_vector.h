@@ -32,5 +32,35 @@ void test_if_vector()
     printf("test_if_vector(): \t%s\n", if_vector(v) ? "PASS" : "FAIL");
 }
 
+void test_vector_equal()
+{
+
+    Vector v1 = {
+        .x = 2.3,
+        .y = 3.9,
+        .z = -12.6,
+        .w = 0.0
+    };
+
+    Vector v2 = {
+        .x = 2.3,
+        .y = 3.9,
+        .z = -12.6,
+        .w = 0.0
+    };
+
+    printf("test_vector_equal(): \t%s\n", vector_equal(v1, v2) ? "PASS" : "FAIL");
+
+    Vector v2 = {
+        .x = 2.3,
+        .y = 4.9,
+        .z = -12.6,
+        .w = 0.0
+    };
+
+    printf("test_vector_equal(): \t%s\n", ! vector_equal(v1, v2) ? "PASS" : "FAIL");
+
+
+}
 
 #endif /* _TEST_VECTOR_H_ */
