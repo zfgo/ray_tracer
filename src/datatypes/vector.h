@@ -2,6 +2,8 @@
  * more or less the same) as well as forward references for vector 
  * operations.
  */
+#ifndef _VECTOR_H_
+#define _VECTOR_H_
 
 #include <math.h>
 #include <stdbool.h>
@@ -22,3 +24,5 @@ bool if_point(Vector v);
 /* Return True if a vector is a vector, false otherwise.
  */
 bool if_vector(Vector v);
+
+#endif /* _VECTOR_H_ */
