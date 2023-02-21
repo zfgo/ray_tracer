@@ -14,6 +14,7 @@ int main(void)
     test_vector_scalar_divide();
     test_vector_norm();
     test_vector_normalize();
+    test_vector_dot();
 
     /* include tests */
     test_equal();
