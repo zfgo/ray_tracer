@@ -6,6 +6,9 @@ int main(void)
     /* vector tests */
     test_if_point();
     test_if_vector();
+    test_vector_equal();
+    test_vector_add();
+    test_vector_subtract();
 
     /* include tests */
     test_equal();
