@@ -6,8 +6,8 @@
 
 void test_equal()
 {
-    float a = 1;
-    float b = 2;
+    float a = 1.0;
+    float b = 2.0;
 
     printf("test_equal(): \t%s\n", equal(a, b) == false ? "PASS" : "FAIL");
     
