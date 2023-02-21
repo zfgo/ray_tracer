@@ -114,7 +114,30 @@ void test_vector_subtract()
 
     Vector v_out = vector_subtract(v1, v2);
 
-    printf("test_vector_add(): \t%s\n", vector_equal(v3, v_out) ? "PASS" : "FAIL");
+    printf("test_vector_subtract(): \t%s\n", vector_equal(v3, v_out) ? "PASS" : "FAIL");
 }
+
+void test_vector_negate()
+{
+    Vector v1 = {
+        .x = 2.3,
+        .y = 3.4,
+        .z = 1.1,
+        .w = 1.0
+    };
+
+    Vector v2 = {
+        .x = -2.3,
+        .y = -3.4,
+        .z = -1.1,
+        .w = -1.0
+    };
+
+    Vector v_out = vector_negate(v1);
+
+    printf("test_vector_negate(): \t%s\n", vector_equal(v2, v_out) ? "PASS" : "FAIL");
+}
+
+
 
 #endif /* _TEST_VECTOR_H_ */

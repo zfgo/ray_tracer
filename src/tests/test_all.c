@@ -9,6 +9,7 @@ int main(void)
     test_vector_equal();
     test_vector_add();
     test_vector_subtract();
+    test_vector_negate();
 
     /* include tests */
     test_equal();
