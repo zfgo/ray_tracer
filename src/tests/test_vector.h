@@ -256,6 +256,45 @@ void test_vector_dot()
     printf("test_vector_dot(): \t%s\n", equal(f2, 1.0) ? "PASS" : "FAIL");
 }
 
+void test_vector_cross()
+{
+    float f1, f2;
+    Vector v1 = {
+        .x = 1.0,
+        .y = 2.0,
+        .z = 3.0,
+        .w = 0.0
+    };
+
+    Vector v2 = {
+        .x = 2.0,
+        .y = 3.0,
+        .z = 4.0,
+        .w = 0.0
+    };
+
+    Vector v3 = {
+        .x = -1.0,
+        .y = 2.0,
+        .z = -1.0,
+        .w = 0.0
+    };
+
+    Vector v4 = {
+        .x = 1.0,
+        .y = -2.0,
+        .z = 1.0,
+        .w = 0.0
+    };
+
+    Vector v_out = vector_cross(v1, v2);
+
+    printf("test_vector_cross(): \t%s\n", vector_equal(v3, v_out) ? "PASS" : "FAIL");
+
+    Vector v_out = vector_cross(v2, v1);
+
+    printf("test_vector_cross(): \t%s\n", vector_equal(v4, v_out) ? "PASS" : "FAIL");
+}
 
 
 
