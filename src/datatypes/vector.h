@@ -56,4 +56,8 @@ Vector vector_normalize(Vector v);
  */
 float vector_dot(Vector v1, Vector v2);
 
+/* calculate the cross product of a vector, and return the result
+ */
+Vector vector_cross(Vector v1, Vector v2);
+
 #endif /* _VECTOR_H_ */
