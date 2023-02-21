@@ -52,4 +52,8 @@ float vector_norm(Vector v);
   */
 Vector vector_normalize(Vector v);
 
+/* calculate the dot product of a vector, and return the result
+ */
+float vector_dot(Vector v1, Vector v2);
+
 #endif /* _VECTOR_H_ */

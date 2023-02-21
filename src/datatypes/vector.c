@@ -83,7 +83,7 @@ Vector vector_scalar_divide(Vector v, float f)
 
 float vector_norm(Vector v)
 {
-    return sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
+    return sqrt(vector_dot(v, v));
 }
 
 Vector vector_normalize(Vector v)
@@ -98,4 +98,9 @@ Vector vector_normalize(Vector v)
     Vector v_out = vector_scalar_divide(v, norm);
 
     return v_out;
+}
+
+float vector_dot(Vector v1, Vector v2)
+{
+    return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z + v1.w * v2.w;
 }
