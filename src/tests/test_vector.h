@@ -181,6 +181,26 @@ void test_vector_scalar_divide()
     printf("test_vector_scalar_multiply(): \t%s\n", vector_equal(v2, v_out) ? "PASS" : "FAIL");
 }
 
+void test_vector_norm()
+{
+    Vector v1 = {
+        .x = 1.0,
+        .y = 0.0,
+        .z = 0.0,
+        .w = 0.0
+    };
+
+    printf("test_vector_norm(): \t%s\n", equal(1.0, vector_norm(v1)) ? "PASS" : "FAIL");
+
+    Vector v2 = {
+        .x = -1.0,
+        .y = -1.0,
+        .z = -1.0,
+        .w = -1.0
+    };
+
+    printf("test_vector_norm(): \t%s\n", equal(2.0, vector_norm(v2)) ? "PASS" : "FAIL");
+}
 
 
 #endif /* _TEST_VECTOR_H_ */
