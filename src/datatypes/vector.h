@@ -33,5 +33,9 @@ Vector vector_add(Vector v1, Vector v2);
  */
 Vector vector_subtract(Vector v1, Vector v2);
 
+/* negate a vector, and return the result
+ */
+Vector vector_negate(Vector v);
+
 
 #endif /* _VECTOR_H_ */

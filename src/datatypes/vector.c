@@ -44,3 +44,15 @@ Vector vector_subtract(Vector v1, Vector v2)
 
     return v_out;
 }
+
+Vector vector_negate(Vector v)
+{
+    Vector zero = {
+        .x = 0,
+        .y = 0,
+        .z = 0,
+        .w = 0
+    };
+
+    return vector_subtract(zero, v);
+}
