@@ -25,6 +25,10 @@ bool if_point(Vector v);
  */
 bool if_vector(Vector v);
 
+/* check if two vectors are equal
+ */
+bool vector_equal(Vector v1, Vector v2);
+
 /* add two vectors, and return the result
  */
 Vector vector_add(Vector v1, Vector v2);
@@ -45,6 +49,8 @@ Vector vector_scalar_multiply(Vector v, float f);
  */
 Vector vector_scalar_divide(Vector v, float f);
 
+/* find the norm (aka length or magnitude) of a vector
+ */
 float vector_norm(Vector v);
 
 /* normalize a vector such that it has magnitude one, and return the
