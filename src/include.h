@@ -6,9 +6,6 @@
 
 #define EPSILON  0.00001
 
-bool equal(float a, float b)
-{
-    return (fabsf(a - b) < EPSILON);
-}
+bool equal(float a, float b);
 
 #endif /* _INCLUDE_H_ */
