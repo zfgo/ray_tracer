@@ -2,6 +2,7 @@
 #define _TEST_VECTOR_H_
 
 #include <stdio.h>
+#include "include.h"
 #include "datatypes/vector.h"
 
 /* test that the if_point function works correctly
@@ -51,14 +52,14 @@ void test_vector_equal()
 
     printf("test_vector_equal(): \t%s\n", vector_equal(v1, v2) ? "PASS" : "FAIL");
 
-    Vector v2 = {
+    Vector v3 = {
         .x = 2.3,
         .y = 4.9,
         .z = -12.6,
         .w = 0.0
     };
 
-    printf("test_vector_equal(): \t%s\n", ! vector_equal(v1, v2) ? "PASS" : "FAIL");
+    printf("test_vector_equal(): \t%s\n", ! vector_equal(v1, v3) ? "PASS" : "FAIL");
 }
 
 void test_vector_add()
@@ -258,7 +259,6 @@ void test_vector_dot()
 
 void test_vector_cross()
 {
-    float f1, f2;
     Vector v1 = {
         .x = 1.0,
         .y = 2.0,
@@ -291,7 +291,7 @@ void test_vector_cross()
 
     printf("test_vector_cross(): \t%s\n", vector_equal(v3, v_out) ? "PASS" : "FAIL");
 
-    Vector v_out = vector_cross(v2, v1);
+    v_out = vector_cross(v2, v1);
 
     printf("test_vector_cross(): \t%s\n", vector_equal(v4, v_out) ? "PASS" : "FAIL");
 }
