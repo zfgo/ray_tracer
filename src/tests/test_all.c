@@ -2,6 +2,13 @@
 
 void test_all()
 {
+    /* Color tests */ 
+    test_color_equal();
+    test_color_add();
+    test_color_subtract();
+    test_color_multiply();
+    test_color_scalar_multiply();
+
     /* vector tests */
     test_if_point();
     test_if_vector();

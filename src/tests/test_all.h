@@ -3,6 +3,7 @@
 
 #include "tests/test_vector.h"
 #include "tests/test_include.h"
+#include "tests/test_color.h"
 
 void test_all();
 
