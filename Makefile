@@ -1,13 +1,15 @@
 CC 			= gcc
 CFLAGS 		= -Wall -g -I./src
+TESTFLAGS 	= -DTEST
 LIBS 		= -lm
 BIN 		= ./bin/main
+TEST 		= ./bin/test
 BUILD		= ./build
-SRCS		= $(shell find . -name '*.c' -not -path './src/tests/*')
+SRCS		= $(shell find . -name '*.c')
 OBJECTS		= $(patsubst %.c, $(BUILD)/%.o, $(SRCS))
 #PROGRAMS 	= main tests
 
-all: $(BIN) $(BIN_TESTS)
+all: $(BIN) $(TEST)
 
 $(BUILD)/%.o: %.c $(BUILD)
 	@mkdir -p '$(@D)'
@@ -17,6 +19,8 @@ $(BUILD)/%.o: %.c $(BUILD)
 $(BIN): $(OBJECTS) $(BUILD)
 	@$(CC) $(CFLAGS) $(OBJECTS) -o $@ $(LIBS)
 
+$(TEST): $(OBJECTS) $(BUILD)
+	@$(CC) $(CFLAGS) $(TESTFLAGS) $(OBJECTS) -o $@ $(LIBS)
 #$(BUILD_TESTS)/%.o: %.c $(BUILD_TESTS) $(BUILD)
 #	@mkdir -p '$(@D)'
 #	$(info CC $<)
