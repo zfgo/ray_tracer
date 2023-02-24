@@ -1,5 +1,6 @@
 #include "datatypes/canvas.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 bool alloc_canvas_data(Canvas *can)
 {
@@ -40,4 +41,20 @@ void write_pixel(Canvas *can, int i, int j, Color c)
     }
 
     can->data[i][j] = c;
+}
+
+void set_canvas_color(Canvas *can, Color c)
+{
+    int i, j;
+
+    for (i = 0; i < can->height; ++i) {
+        for (j = 0; j < can->width; ++i) {
+            can->data[i][j] = c;
+        }
+    }
+}
+
+void canvas_to_pnm(Canvas *can, char *f_name)
+{
+    FILE *fp;
 }
