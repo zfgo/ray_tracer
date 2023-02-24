@@ -24,5 +24,9 @@ void free_canvas_data(Canvas *can);
  */
 void write_pixel(Canvas *can, int i, int j, Color c);
 
+/* set the entire canvas to one solid color 
+ */
+void set_canvas_color(Canvas *can, Color c);
+
 
 #endif
