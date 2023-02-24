@@ -1,7 +1,6 @@
-#include "test_vector.h"
-#include "test_include.h"
+#include "tests/test_all.h"
 
-int main(void)
+void test_all()
 {
     /* vector tests */
     test_if_point();
@@ -19,6 +18,4 @@ int main(void)
 
     /* include tests */
     test_equal();
-
-    return 0;
 }
