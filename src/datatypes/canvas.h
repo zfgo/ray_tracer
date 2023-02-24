@@ -28,5 +28,6 @@ void write_pixel(Canvas *can, int i, int j, Color c);
  */
 void set_canvas_color(Canvas *can, Color c);
 
+void canvas_to_pnm(Canvas *can, char *f_name);
 
 #endif
