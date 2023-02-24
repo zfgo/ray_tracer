@@ -4,6 +4,10 @@
 #include <stdbool.h>
 #include <math.h>
 
+#define TEST_PRINT_FORMAT "%-40s %-5s\n"
+#define PASS "ok"
+#define FAIL "FAIL"
+
 #define EPSILON  0.00001
 
 bool equal(float a, float b);
