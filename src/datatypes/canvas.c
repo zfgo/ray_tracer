@@ -12,7 +12,7 @@ bool alloc_canvas_data(Canvas *can)
     }
 
     for (i = 0; i < can->height; ++i) {
-        if ((data[i] = (Color **)malloc(sizeof(Color *) * can->width)) == NULL) {
+        if ((data[i] = (Color **)malloc(sizeof(Color) * can->width)) == NULL) {
             return false;
         }
     }
@@ -22,4 +22,22 @@ bool alloc_canvas_data(Canvas *can)
     return true;
 }
 
+void free_canvas_data(Canvas *can) 
+{
+    int i;
 
+    for (i = 0; i < can->height; ++i) {
+        free(can->data[i]);
+    }
+    
+    free(can->data);
+}
+
+void write_pixel(Canvas *can, int i, int j, Color c)
+{
+    if (i < 0 || i >= can->height || j < 0 || j >= can->width) {
+        return;
+    }
+
+    can->data[i][j] = c;
+}
