@@ -4,6 +4,7 @@
 #include "include.h"
 #include "datatypes/vector.h"
 
+
 /* test that the if_point function works correctly
  */
 void test_if_point()
@@ -15,7 +16,7 @@ void test_if_point()
         .w = 1.0
     };
     
-    printf("test_if_point(): \t%s\n", if_point(p) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_if_point()", if_point(p) ? PASS : FAIL);
 }
 
 /* test that the if_vector function works correctly
@@ -29,7 +30,7 @@ void test_if_vector()
         .w = 0.0
     };
     
-    printf("test_if_vector(): \t%s\n", if_vector(v) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_if_vector()", if_vector(v) ? PASS : FAIL);
 }
 
 void test_vector_equal()
@@ -49,7 +50,7 @@ void test_vector_equal()
         .w = 0.0
     };
 
-    printf("test_vector_equal(): \t%s\n", vector_equal(v1, v2) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_equal()", vector_equal(v1, v2) ? PASS : FAIL);
 
     Vector v3 = {
         .x = 2.3,
@@ -58,7 +59,7 @@ void test_vector_equal()
         .w = 0.0
     };
 
-    printf("test_vector_equal(): \t%s\n", ! vector_equal(v1, v3) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_equal()", ! vector_equal(v1, v3) ? PASS : FAIL);
 }
 
 void test_vector_add()
@@ -86,7 +87,7 @@ void test_vector_add()
 
     Vector v_out = vector_add(v1, v2);
 
-    printf("test_vector_add(): \t%s\n", vector_equal(v3, v_out) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_add()", vector_equal(v3, v_out) ? PASS : FAIL);
 }
 
 void test_vector_subtract()
@@ -114,7 +115,7 @@ void test_vector_subtract()
 
     Vector v_out = vector_subtract(v1, v2);
 
-    printf("test_vector_subtract(): \t%s\n", vector_equal(v3, v_out) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_subtract()", vector_equal(v3, v_out) ? PASS : FAIL);
 }
 
 void test_vector_negate()
@@ -135,7 +136,7 @@ void test_vector_negate()
 
     Vector v_out = vector_negate(v1);
 
-    printf("test_vector_negate(): \t%s\n", vector_equal(v2, v_out) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_negate()", vector_equal(v2, v_out) ? PASS : FAIL);
 }
 
 void test_vector_scalar_multiply()
@@ -156,7 +157,7 @@ void test_vector_scalar_multiply()
 
     Vector v_out = vector_scalar_multiply(v1, 2.0);
 
-    printf("test_vector_scalar_multiply(): \t%s\n", vector_equal(v2, v_out) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_scalar_multiply()", vector_equal(v2, v_out) ? PASS : FAIL);
 }
 
 
@@ -178,7 +179,7 @@ void test_vector_scalar_divide()
 
     Vector v_out = vector_scalar_divide(v1, 2.0);
 
-    printf("test_vector_scalar_multiply(): \t%s\n", vector_equal(v2, v_out) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_scalar_multiply()", vector_equal(v2, v_out) ? PASS : FAIL);
 }
 
 void test_vector_norm()
@@ -190,7 +191,7 @@ void test_vector_norm()
         .w = 0.0
     };
 
-    printf("test_vector_norm(): \t%s\n", equal(1.0, vector_norm(v1)) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_norm()", equal(1.0, vector_norm(v1)) ? PASS : FAIL);
 
     Vector v2 = {
         .x = -1.0,
@@ -199,7 +200,7 @@ void test_vector_norm()
         .w = -1.0
     };
 
-    printf("test_vector_norm(): \t%s\n", equal(2.0, vector_norm(v2)) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_norm()", equal(2.0, vector_norm(v2)) ? PASS : FAIL);
 }
 
 void test_vector_normalize()
@@ -220,7 +221,7 @@ void test_vector_normalize()
 
     Vector v_out = vector_normalize(v1);
 
-    printf("test_vector_normalize(): \t%s\n", vector_equal(v2, v_out) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_normalize()", vector_equal(v2, v_out) ? PASS : FAIL);
 }
 
 void test_vector_dot()
@@ -242,7 +243,7 @@ void test_vector_dot()
 
     f1 = vector_dot(v1, v2);
 
-    printf("test_vector_dot(): \t%s\n", equal(f1, 20.0) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_dot()", equal(f1, 20.0) ? PASS : FAIL);
 
     Vector v3 = {
         .x = 1.0,
@@ -253,7 +254,7 @@ void test_vector_dot()
 
     f2 = vector_dot(v3, v3);
 
-    printf("test_vector_dot(): \t%s\n", equal(f2, 1.0) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_dot()", equal(f2, 1.0) ? PASS : FAIL);
 }
 
 void test_vector_cross()
@@ -288,9 +289,9 @@ void test_vector_cross()
 
     Vector v_out = vector_cross(v1, v2);
 
-    printf("test_vector_cross(): \t%s\n", vector_equal(v3, v_out) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_cross()", vector_equal(v3, v_out) ? PASS : FAIL);
 
     v_out = vector_cross(v2, v1);
 
-    printf("test_vector_cross(): \t%s\n", vector_equal(v4, v_out) ? "PASS" : "FAIL");
+    printf(TEST_PRINT_FORMAT, "test_vector_cross()", vector_equal(v4, v_out) ? PASS : FAIL);
 }
