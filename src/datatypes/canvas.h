@@ -28,6 +28,8 @@ void write_pixel(Canvas *can, int i, int j, Color c);
  */
 void set_canvas_color(Canvas *can, Color c);
 
+/* write the canvas to a pnm file with the P6 magic number
+ */
 void canvas_to_pnm(Canvas *can, char *f_name);
 
 #endif
