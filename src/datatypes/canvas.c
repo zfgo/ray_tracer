@@ -13,7 +13,7 @@ bool alloc_canvas_data(Canvas *can)
     }
 
     for (i = 0; i < can->height; ++i) {
-        if ((data[i] = (Color **)malloc(sizeof(Color) * can->width)) == NULL) {
+        if ((data[i] = (Color *)malloc(sizeof(Color) * can->width)) == NULL) {
             return false;
         }
     }
