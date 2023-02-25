@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <math.h>
 
+#define UNUSED __attribute__((unused))
+
 #define TEST_PRINT_FORMAT "%-40s %-5s\n"
 #define PASS "ok"
 #define FAIL "FAIL"
