@@ -2,6 +2,10 @@
 
 void test_all()
 {
+    /* Canvas tests */ 
+    test_canvas_simple();
+    test_canvas_complex();
+
     /* Color tests */ 
     test_color_equal();
     test_color_add();
