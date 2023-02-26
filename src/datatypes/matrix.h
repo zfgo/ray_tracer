@@ -38,7 +38,7 @@ Matrix4 matrix4_compose(Matrix4 m1, Matrix4 m2);
 /* given a 4x4 matric and a vector, multiply them together and return
  * the result
  */
-Matrix4 matrix4_vector_multipy(Matrix4 m1, Vector v);
+Vector matrix4_vector_multipy(Matrix4 m1, Vector v);
 
 Matrix4 matrix4_transpose(Matrix4 m);
 
