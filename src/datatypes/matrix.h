@@ -50,6 +50,10 @@ float matrix3_determinant(Matrix3 m);
 
 float matrix2_determinant(Matrix2 m);
 
+Matrix3 matrix4_submatrix(Matrix4 m, int i, int j);
+
+Matrix2 matrix3_submatrix(Matrix3 m, int i, int j);
+
 float matrix4_minor(Matrix4 m, int i, int j);
 
 float matrix3_minor(Matrix3 m, int i, int j);

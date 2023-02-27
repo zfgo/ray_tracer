@@ -103,3 +103,42 @@ Matrix4 matrix4_transpose(Matrix4 m)
 
     return res;
 }
+
+float matrix4_determinant(Matrix4 m)
+{
+    return 0.0;
+}
+
+float matrix3_determinant(Matrix3 m)
+{
+    return 0.0;
+}
+
+float matrix2_determinant(Matrix2 m)
+{
+    return m.A[0][0] * m.A[1][1] - m.A[0][1] * m.A[1][0];
+}
+
+Matrix3 matrix4_submatrix(Matrix4 m, int r, int c)
+{
+    Matrix3 res;
+    int i, j;
+    int out_i = 0,
+        out_j = 0;
+
+    for (i = 0; i < 4; ++i) {
+        if (i == r) {
+
+            continue;
+        }
+        for (j = 0; j < 4; ++j) {
+            if (j == c) {
+                continue;
+            }
+            res.A[out_i][out_j] = m.A[i][j];
+            ++out_j;
+        }
+        ++out_i;
+    }
+
+}
