@@ -1,92 +1,92 @@
 #include "datatypes/vector.h"
 #include "include.h"
 
-bool if_point(Vector v)
+bool if_point(Vec v)
 {
-    return equal(v.w, 1.0);
+    return equal(v.p[3], 1.0);
 }
 
-bool if_vector(Vector v)
+bool if_vector(Vec v)
 {
-    return equal(v.w, 0.0);
+    return equal(v.v[3], 0.0);
 }
 
-bool vector_equal(Vector v1, Vector v2)
+bool vector_equal(Vec v1, Vec v2)
 {
     return (
-        equal(v1.x, v2.x) &&
-        equal(v1.y, v2.y) &&
-        equal(v1.z, v2.z) &&
-        equal(v1.w, v2.w)
+        equal(v1.v[0], v2.v[0]) &&
+        equal(v1.v[1], v2.v[1]) &&
+        equal(v1.v[2], v2.v[2]) &&
+        equal(v1.v[3], v2.v[3])
     );
 }
 
-Vector vector_add(Vector v1, Vector v2)
+Vec vector_add(Vec v1, Vec v2)
 {
-    Vector v_out;
+    Vec v_out;
 
-    v_out.x = v1.x + v2.x;
-    v_out.y = v1.y + v2.y;
-    v_out.z = v1.z + v2.z;
-    v_out.w = v1.w + v2.w;
+    v_out.v[0] = v1.v[0] + v2.v[0];
+    v_out.v[1] = v1.v[1] + v2.v[1];
+    v_out.v[2] = v1.v[2] + v2.v[2];
+    v_out.v[3] = v1.v[3] + v2.v[3];
 
     return v_out;
 }
 
-Vector vector_subtract(Vector v1, Vector v2)
+Vec vector_subtract(Vec v1, Vec v2)
 {
-    Vector v_out;
+    Vec v_out;
 
-    v_out.x = v1.x - v2.x;
-    v_out.y = v1.y - v2.y;
-    v_out.z = v1.z - v2.z;
-    v_out.w = v1.w - v2.w;
+    v_out.v[0] = v1.v[0] - v2.v[0];
+    v_out.v[1] = v1.v[1] - v2.v[1];
+    v_out.v[2] = v1.v[2] - v2.v[2];
+    v_out.v[3] = v1.v[3] - v2.v[3];
 
     return v_out;
 }
 
-Vector vector_negate(Vector v)
+Vec vector_negate(Vec v)
 {
-    Vector zero = {
-        .x = 0,
-        .y = 0,
-        .z = 0,
-        .w = 0
+    Vec zero = {
+        .v[0] = 0.0,
+        .v[1] = 0.0,
+        .v[2] = 0.0,
+        .v[3] = 0.0
     };
 
     return vector_subtract(zero, v);
 }
 
-Vector vector_scalar_multiply(Vector v, float f)
+Vec vector_scalar_multiply(Vec v, float f)
 {
-    Vector v_out = {
-        .x = f * v.x,
-        .y = f * v.y,
-        .z = f * v.z,
-        .w = f * v.w
+    Vec v_out = {
+        .v[0] = f * v.v[0],
+        .v[1] = f * v.v[1],
+        .v[2] = f * v.v[2],
+        .v[3] = f * v.v[3]
     };
 
     return v_out;
 }
 
-Vector vector_scalar_divide(Vector v, float f)
+Vec vector_scalar_divide(Vec v, float f)
 {
-    Vector v_out = {
-        .x = v.x / f,
-        .y = v.y / f,
-        .z = v.z / f,
-        .w = v.w / f
+    Vec v_out = {
+        .v[0] = v.v[0] / f,
+        .v[1] = v.v[1] / f,
+        .v[2] = v.v[2] / f,
+        .v[3] = v.v[3] / f
     };
 
     return v_out;
 }
 
-float vector_norm(Vector v)
+float vector_norm(Vec v)
 {
     return sqrt(vector_dot(v, v));
 }
 
-Vector vector_normalize(Vector v)
+Vec vector_normalize(Vec v)
 {
     float norm = vector_norm(v);
 
@@ -95,23 +95,26 @@ Vector vector_normalize(Vector v)
         return v;
     }
 
-    Vector v_out = vector_scalar_divide(v, norm);
+    Vec v_out = vector_scalar_divide(v, norm);
 
     return v_out;
 }
 
-float vector_dot(Vector v1, Vector v2)
+float vector_dot(Vec v1, Vec v2)
 {
-    return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z + v1.w * v2.w;
+    return v1.v[0] * v2.v[0] 
+         + v1.v[1] * v2.v[1] 
+         + v1.v[2] * v2.v[2] 
+         + v1.v[3] * v2.v[3];
 }
 
-Vector vector_cross(Vector v1, Vector v2)
+Vec vector_cross(Vec v1, Vec v2)
 {
-    Vector v_out = {
-        .x = v1.y * v2.z - v1.z * v2.y,
-        .y = v1.z * v2.x - v1.x * v2.z,
-        .z = v1.x * v2.y - v1.y * v2.x,
-        .w = 0.0
+    Vec v_out = {
+        .v[0] = v1.v[1] * v2.v[2] - v1.v[2] * v2.v[1],
+        .v[1] = v1.v[2] * v2.v[0] - v1.v[0] * v2.v[2],
+        .v[2] = v1.v[0] * v2.v[1] - v1.v[1] * v2.v[0],
+        .v[3] = 0.0
     };
 
     return v_out;
