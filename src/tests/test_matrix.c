@@ -114,6 +114,9 @@ void test_matrix4_compose()
         }
     };
 
+    Mat4 res = matrix4_compose(a, b);
+
+    printf(TEST_PRINT_FORMAT, "test_matrix4_compose()", matrix4_equal(c, res) ? PASS : FAIL);
 }
 
 void test_matrix4_vector_multiply()
@@ -121,18 +124,22 @@ void test_matrix4_vector_multiply()
     Mat4 a = {
         .A = {
             {1, 2, 3, 4}, 
-            {5, 6, 7, 8}, 
-            {9, 10, 11, 12}, 
-            {13, 14, 15, 16}
+            {2, 4, 4, 2}, 
+            {8, 6, 4, 1}, 
+            {0, 0, 0, 1}
         }
     };
     Vec v1 = {
-        .v = {1, 2, 3, 4}
+        .v = {1, 2, 3, 1}
     };
 
     Vec v2 = {
-        .v = {30, 70, 110, 150}
+        .v = {18, 24, 33, 1}
     };
+
+    Vec res = matrix4_vector_multiply(a, v1);
+    
+    printf(TEST_PRINT_FORMAT, "test_matrix4_vector_multiply()", vector_equal(v2, res) ? PASS : FAIL);
 }
 
 void test_matrix4_transpose()
