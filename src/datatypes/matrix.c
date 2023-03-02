@@ -76,14 +76,14 @@ Mat4 matrix4_compose(Mat4 m1, Mat4 m2)
     return res;
 }
 
-Vec matrix4_vector_multipy(Mat4 m, Vec v)
+Vec matrix4_vector_multiply(Mat4 m, Vec v)
 {
     Vec res = { 0 };
     int i, j;
 
     for (i = 0; i < 4; ++i) {
         for (j = 0; j < 4; ++j) {
-            res.v[i] += v.v[j] * m.A[j][i];
+            res.v[i] += v.v[j] * m.A[i][j];
         }
     }
 

@@ -42,7 +42,7 @@ Mat4 matrix4_compose(Mat4 m1, Mat4 m2);
 /* given a 4x4 matric and a vector, multiply them together and return
  * the result
  */
-Vec matrix4_vector_multipy(Mat4 m1, Vec v);
+Vec matrix4_vector_multiply(Mat4 m1, Vec v);
 
 /* calculate the transpose of a given matrix, and return the result
  */
