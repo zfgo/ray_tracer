@@ -10,10 +10,7 @@
 void test_if_point()
 {
     Vec p = {
-        .v[0] = 2.3,
-        .v[1] = 3.9,
-        .v[2] = -12.6,
-        .v[3] = 1.0
+        .v = {2.3, 3.9, -12.6, 1.0}
     };
     
     printf(TEST_PRINT_FORMAT, "test_if_point()", if_point(p) ? PASS : FAIL);
@@ -24,10 +21,7 @@ void test_if_point()
 void test_if_vector()
 {
     Vec v = {
-        .v[0] = 2.3,
-        .v[1] = 3.9,
-        .v[2] = -12.6,
-        .v[3] = 0.0
+        .v = {2.3, 3.9, -12.6, 0.0}
     };
     
     printf(TEST_PRINT_FORMAT, "test_if_vector()", if_vector(v) ? PASS : FAIL);
@@ -37,26 +31,17 @@ void test_vector_equal()
 {
 
     Vec v1 = {
-        .v[0] = 2.3,
-        .v[1] = 3.9,
-        .v[2] = -12.6,
-        .v[3] = 0.0
+        .v = {2.3, 3.9, -12.6, 0.0}
     };
 
     Vec v2 = {
-        .v[0] = 2.3,
-        .v[1] = 3.9,
-        .v[2] = -12.6,
-        .v[3] = 0.0
+        .v = {2.3, 3.9, -12.6, 0.0}
     };
 
     printf(TEST_PRINT_FORMAT, "test_vector_equal()", vector_equal(v1, v2) ? PASS : FAIL);
 
     Vec v3 = {
-        .v[0] = 2.3,
-        .v[1] = 4.9,
-        .v[2] = -12.6,
-        .v[3] = 0.0
+        .v = {2.3, 4.9, -12.6, 0.0}
     };
 
     printf(TEST_PRINT_FORMAT, "test_vector_equal()", ! vector_equal(v1, v3) ? PASS : FAIL);
@@ -65,24 +50,15 @@ void test_vector_equal()
 void test_vector_add()
 {
     Vec v1 = {
-        .v[0] = 2.3,
-        .v[1] = 3.4,
-        .v[2] = 12.6,
-        .v[3] = 0.0
+        .v = {2.3, 3.4, 12.6, 0.0}
     };
 
     Vec v2 = {
-        .v[0] = 2.3,
-        .v[1] = 3.4,
-        .v[2] = -12.6,
-        .v[3] = 1.0
+        .v = {2.3, 3.4, -12.6, 1.0}
     };
 
     Vec v3 = {
-        .v[0] = 4.6,
-        .v[1] = 6.8,
-        .v[2] = 0.0,
-        .v[3] = 1.0
+        .v = {4.6, 6.8, 0.0, 1.0}
     };
 
     Vec v_out = vector_add(v1, v2);
@@ -93,24 +69,15 @@ void test_vector_add()
 void test_vector_subtract()
 {
     Vec v1 = {
-        .v[0] = 2.3,
-        .v[1] = 3.4,
-        .v[2] = 1.1,
-        .v[3] = 1.0
+        .v = {2.3, 3.4, 1.1, 1.0}
     };
 
     Vec v2 = {
-        .v[0] = 2.3,
-        .v[1] = 3.4,
-        .v[2] = 1.0,
-        .v[3] = 1.0
+        .v = {2.3, 3.4, 1.0, 1.0}
     };
 
     Vec v3 = {
-        .v[0] = 0.0,
-        .v[1] = 0.0,
-        .v[2] = 0.1,
-        .v[3] = 0.0
+        .v = {0.0, 0.0, 0.1, 0.0}
     };
 
     Vec v_out = vector_subtract(v1, v2);
@@ -121,17 +88,11 @@ void test_vector_subtract()
 void test_vector_negate()
 {
     Vec v1 = {
-        .v[0] = 2.3,
-        .v[1] = 3.4,
-        .v[2] = 1.1,
-        .v[3] = 1.0
+        .v = {2.3, 3.4, 1.1, 1.0}
     };
 
     Vec v2 = {
-        .v[0] = -2.3,
-        .v[1] = -3.4,
-        .v[2] = -1.1,
-        .v[3] = -1.0
+        .v = {-2.3, -3.4, -1.1, -1.0}
     };
 
     Vec v_out = vector_negate(v1);
@@ -142,17 +103,11 @@ void test_vector_negate()
 void test_vector_scalar_multiply()
 {
     Vec v1 = {
-        .v[0] = 2.3,
-        .v[1] = 3.4,
-        .v[2] = 1.1,
-        .v[3] = 1.0
+        .v = {2.3, 3.4, 1.1, 1.0}
     };
 
     Vec v2 = {
-        .v[0] = 4.6,
-        .v[1] = 6.8,
-        .v[2] = 2.2,
-        .v[3] = 2.0
+        .v = {4.6, 6.8, 2.2, 2.0}
     };
 
     Vec v_out = vector_scalar_multiply(v1, 2.0);
@@ -164,17 +119,11 @@ void test_vector_scalar_multiply()
 void test_vector_scalar_divide()
 {
     Vec v1 = {
-        .v[0] = 4.6,
-        .v[1] = 6.8,
-        .v[2] = 2.2,
-        .v[3] = 2.0
+        .v = {4.6, 6.8, 2.2, 2.0}
     };
 
     Vec v2 = {
-        .v[0] = 2.3,
-        .v[1] = 3.4,
-        .v[2] = 1.1,
-        .v[3] = 1.0
+        .v = {2.3, 3.4, 1.1, 1.0}
     };
 
     Vec v_out = vector_scalar_divide(v1, 2.0);
@@ -185,19 +134,13 @@ void test_vector_scalar_divide()
 void test_vector_norm()
 {
     Vec v1 = {
-        .v[0] = 1.0,
-        .v[1] = 0.0,
-        .v[2] = 0.0,
-        .v[3] = 0.0
+        .v = {1.0, 0.0, 0.0, 0.0}
     };
 
     printf(TEST_PRINT_FORMAT, "test_vector_norm()", equal(1.0, vector_norm(v1)) ? PASS : FAIL);
 
     Vec v2 = {
-        .v[0] = -1.0,
-        .v[1] = -1.0,
-        .v[2] = -1.0,
-        .v[3] = -1.0
+        .v = {-1.0, -1.0, -1.0, -1.0}
     };
 
     printf(TEST_PRINT_FORMAT, "test_vector_norm()", equal(2.0, vector_norm(v2)) ? PASS : FAIL);
@@ -206,17 +149,11 @@ void test_vector_norm()
 void test_vector_normalize()
 {
     Vec v1 = {
-        .v[0] = 4.0,
-        .v[1] = 0.0,
-        .v[2] = 0.0,
-        .v[3] = 0.0
+        .v = {4.0, 0.0, 0.0, 0.0}
     };
 
     Vec v2 = {
-        .v[0] = 1.0,
-        .v[1] = 0.0,
-        .v[2] = 0.0,
-        .v[3] = 0.0
+        .v = {1.0, 0.0, 0.0, 0.0}
     };
 
     Vec v_out = vector_normalize(v1);
@@ -228,17 +165,11 @@ void test_vector_dot()
 {
     float f1, f2;
     Vec v1 = {
-        .v[0] = 1.0,
-        .v[1] = 2.0,
-        .v[2] = 3.0,
-        .v[3] = 0.0
+        .v = {1.0, 2.0, 3.0, 0.0}
     };
 
     Vec v2 = {
-        .v[0] = 2.0,
-        .v[1] = 3.0,
-        .v[2] = 4.0,
-        .v[3] = 0.0
+        .v = {2.0, 3.0, 4.0, 0.0}
     };
 
     f1 = vector_dot(v1, v2);
@@ -246,10 +177,7 @@ void test_vector_dot()
     printf(TEST_PRINT_FORMAT, "test_vector_dot()", equal(f1, 20.0) ? PASS : FAIL);
 
     Vec v3 = {
-        .v[0] = 1.0,
-        .v[1] = 0.0,
-        .v[2] = 0.0,
-        .v[3] = 0.0
+        .v = {1.0, 0.0, 0.0, 0.0}
     };
 
     f2 = vector_dot(v3, v3);
@@ -260,31 +188,19 @@ void test_vector_dot()
 void test_vector_cross()
 {
     Vec v1 = {
-        .v[0] = 1.0,
-        .v[1] = 2.0,
-        .v[2] = 3.0,
-        .v[3] = 0.0
+        .v = {1.0, 2.0, 3.0, 0.0}
     };
 
     Vec v2 = {
-        .v[0] = 2.0,
-        .v[1] = 3.0,
-        .v[2] = 4.0,
-        .v[3] = 0.0
+        .v = {2.0, 3.0, 4.0, 0.0}
     };
 
     Vec v3 = {
-        .v[0] = -1.0,
-        .v[1] = 2.0,
-        .v[2] = -1.0,
-        .v[3] = 0.0
+        .v = {-1.0, 2.0, -1.0, 0.0}
     };
 
     Vec v4 = {
-        .v[0] = 1.0,
-        .v[1] = -2.0,
-        .v[2] = 1.0,
-        .v[3] = 0.0
+        .v = {1.0, -2.0, 1.0, 0.0}
     };
 
     Vec v_out = vector_cross(v1, v2);
