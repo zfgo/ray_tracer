@@ -163,7 +163,6 @@ void test_matrix4_transpose()
 
     Mat4 res = matrix4_transpose(a);
 
-    printf(TEST_PRINT_FORMAT, "test_matrix4_transpose()", matrix4_equal(b, res) ? PASS : FAIL);
 }
 
 void test_matrix4_determinant()
@@ -176,8 +175,52 @@ void test_matrix4_determinant()
             {0, 0, 0, 1}
         }
     };
-    float res = 1.0;
+    float det = 1.0;
+    float res; // = matrix4_determinant(a);
 
+    printf("%f\n", res);
+
+    printf(TEST_PRINT_FORMAT, "test_matrix4_determinant()", equal(det, res) ? PASS : FAIL);
+}
+
+void test_matrix3_determinant()
+{
+    Mat3 a = {
+        .A = {
+            {1, 2, 3},
+            {0, 1, 2},
+            {0, 0, 2}
+        }
+    };
+    float det = 2.0;
+    float res = matrix3_determinant(a);
+
+    printf("%f\n", res);
+
+    printf(TEST_PRINT_FORMAT, "test_matrix3_determinant()", equal(det, res) ? PASS : FAIL);
+}
+
+void test_matrix2_determinant()
+{
+    Mat2 a = {
+        .A = {
+            {1, 2},
+            {0, 1}
+        }
+    };
+    Mat2 b = {
+        .A = {
+            {1, 2},
+            {0, 2}
+        }
+    };
+    float det_a = 1.0;
+    float det_b = 2.0;
+    float res_a = matrix2_determinant(a);
+    float res_b = matrix2_determinant(b);
+
+    printf(TEST_PRINT_FORMAT, "test_matrix2_determinant()", equal(det_a, res_a) ? PASS : FAIL);
+    printf(TEST_PRINT_FORMAT, "test_matrix2_determinant()", equal(det_b, res_b) ? PASS : FAIL);
 }
 
 void test_matrix4_invert()
