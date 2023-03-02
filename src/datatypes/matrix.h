@@ -23,6 +23,14 @@ typedef struct matrix2
  */
 void matrix4_print(Mat4 m);
 
+/* print a 3x3 matrix to stdout
+ */
+void matrix3_print(Mat3 m);
+
+/* print a 2x2 matrix to stdout
+ */
+void matrix2_print(Mat2 m);
+
 /* given two 4x4 matrices, determine if they are equal or not
  */
 bool matrix4_equal(Mat4 m1, Mat4 m2);
