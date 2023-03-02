@@ -327,3 +327,17 @@ Mat4 matrix4_rotation_z(float deg)
 
     return rot_z;
 }
+
+Mat4 matrix4_shear(float xz, float xy, float yx, float yz, float zx, float zy)
+{
+    Mat4 shear = matrix4_identity();
+
+    shear.A[0][1] = xy;
+    shear.A[0][2] = xz;
+    shear.A[1][0] = yx;
+    shear.A[1][2] = yz;
+    shear.A[2][0] = zx;
+    shear.A[2][1] = zy;
+
+    return shear;
+}
