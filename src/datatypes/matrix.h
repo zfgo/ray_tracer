@@ -63,19 +63,33 @@ float matrix2_determinant(Mat2 m);
 /* find the 3x3 submatrix of a 4x4 matrix when row i and column j are
  * removed
  */
-Mat3 matrix4_submatrix(Mat4 m, int i, int j);
+Mat3 matrix4_submatrix(Mat4 m, int r, int c);
 
 /* find the 2x2 submatrix of a 3x3 matrix when row i and column j are
  * removed
  */
-Mat2 matrix3_submatrix(Mat3 m, int i, int j);
+Mat2 matrix3_submatrix(Mat3 m, int r, int c);
 
+/* calculate the determinant of the 3x3 submatrix that is found by 
+ * removing row i and column j
+ */
 float matrix4_minor(Mat4 m, int i, int j);
 
+/* calculate the determinant of the 2x2 submatrix that is found by 
+ * removing row i and column j
+ */
 float matrix3_minor(Mat3 m, int i, int j);
 
+/* calculate the determinant of the 3x3 submatrix that is found by 
+ * removing row i and column j and change the sign of the result if
+ * (i + j) is odd.
+ */
 float matrix4_cofactor(Mat4 m, int i, int j);
 
+/* calculate the determinant of the 2x2 submatrix that is found by 
+ * removing row i and column j and change the sign of the result if
+ * (i + j) is odd.
+ */
 float matrix3_cofactor(Mat3 m, int i, int j);
 
 
