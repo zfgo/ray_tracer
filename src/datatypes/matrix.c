@@ -256,3 +256,15 @@ Mat4 matrix4_invert(Mat4 m)
 
     return res;
 }
+
+Mat4 matrix4_identity()
+{
+    Mat4 id = { 0 };
+    int i;
+
+    for (i = 0; i < 4; ++i) {
+        id.A[i][i] = 1.0;
+    }
+
+    return id;
+}
