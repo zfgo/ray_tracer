@@ -104,5 +104,38 @@ float matrix4_cofactor(Mat4 m, int i, int j);
  */
 float matrix3_cofactor(Mat3 m, int i, int j);
 
+/* return a 4x4 identity matrix
+ */
+Mat4 matrix4_identity();
+
+/* return a translation matrix that translates a point in the (x, y, z)
+ * direction (but has not effect on vectors)
+ */
+Mat4 matrix4_translate(float x, float y, float z);
+
+/* return a scale matrix that scales a point or a vector in the (x, y,
+ * z) direction
+ */
+Mat4 matrix4_scale(float x, float y, float z);
+
+/* return a rotation matrix that rotates a point about the x access by
+ * `deg` number of degrees
+ */
+Mat4 matrix4_rotation_x(float deg);
+
+/* return a rotation matrix that rotates a point about the y axis by
+ * `deg` number of degrees
+ */
+Mat4 matrix4_rotation_y(float deg);
+
+/* return a rotation matrix that rotates a point about the z axis by
+ * `deg` number of degrees
+ */
+Mat4 matrix4_rotation_z(float deg);
+
+/* return a shear matrix that makes a straight line slanted by changing
+ * each axis of a point in relation to the other two axes
+ */
+Mat4 matrix4_shear(float xy, float xz, float yx, float yz, float zx, float zy);
 
 #endif /* _MATRIX_H_ */
