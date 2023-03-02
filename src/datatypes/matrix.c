@@ -123,5 +123,28 @@ Mat3 matrix4_submatrix(Mat4 m, int r, int c)
         }
         ++out_i;
     }
+
+    return res;
+}
+
+Mat2 matrix3_submatrix(Mat3 m, int i, int j)
+{
+    Mat2 res;
+    int i, j;
+    int out_i = 0,
+        out_j = 0;
+
+    for (i = 0; i < 3; ++i) {
+        if (i == r)
+            continue;
+        for (j = 0; j < 3; ++j) {
+            if (j == c)
+                continue;
+            res.A[out_i][out_j] = m.A[i][j];
+            ++out_j;
+        }
+        ++out_i;
+    }
+
     return res;
 }
