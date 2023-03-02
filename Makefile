@@ -1,5 +1,5 @@
 CC 			= gcc
-CFLAGS 		= -Wall -g -I./src
+CFLAGS 		= -Wall -O2 -g -I./src
 LIBS 		= -lm
 BIN 		= ./bin/main
 BUILD		= ./build
