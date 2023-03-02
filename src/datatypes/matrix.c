@@ -2,6 +2,7 @@
 #include "datatypes/matrix.h"
 
 #include <stdio.h>
+#include <math.h>
 
 void matrix4_print(Mat4 m)
 {
@@ -289,4 +290,40 @@ Mat4 matrix4_scale(float x, float y, float z)
     scale.A[2][2] = z;
 
     return scale;
+}
+
+Mat4 matrix4_rotation_x(float deg)
+{
+    Mat4 rot_x = matrix4_identity();
+    float rad = deg_to_rad(deg);
+
+    rot_x.A[1][1] = rot_x.A[2][2] = cosf(rad);
+    rot_x.A[2][1] = sinf(rad);
+    rot_x.A[1][2] = -sinf(rad);
+
+    return rot_x;
+}
+
+Mat4 matrix4_rotation_y(float deg)
+{
+    Mat4 rot_y = matrix4_identity();
+    float rad = deg_to_rad(deg);
+
+    rot_y.A[0][0] = rot_y.A[2][2] = cosf(rad);
+    rot_y.A[2][0] = -sinf(rad);
+    rot_y.A[0][2] = sinf(rad);
+
+    return rot_y;
+}
+
+Mat4 matrix4_rotation_z(float deg)
+{
+    Mat4 rot_z = matrix4_identity();
+    float rad = deg_to_rad(deg);
+
+    rot_z.A[0][0] = rot_z.A[1][1] = cosf(rad);
+    rot_z.A[1][0] = sinf(rad);
+    rot_z.A[0][1] = -sinf(rad);
+
+    return rot_z;
 }
