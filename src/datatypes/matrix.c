@@ -279,3 +279,14 @@ Mat4 matrix4_translate(float x, float y, float z)
 
     return trans;
 }
+
+Mat4 matrix4_scale(float x, float y, float z)
+{
+    Mat4 scale = matrix4_identity();
+
+    scale.A[0][0] = x;
+    scale.A[1][1] = y;
+    scale.A[2][2] = z;
+
+    return scale;
+}
