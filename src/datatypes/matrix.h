@@ -19,6 +19,10 @@ typedef struct matrix2
     float A[2][2];
 } Mat2;
 
+/* print a 4x4 matrix to stdout
+ */
+void matrix4_print(Mat4 m);
+
 /* given two 4x4 matrices, determine if they are equal or not
  */
 bool matrix4_equal(Mat4 m1, Mat4 m2);
