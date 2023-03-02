@@ -40,18 +40,34 @@ Mat4 matrix4_compose(Mat4 m1, Mat4 m2);
  */
 Vec matrix4_vector_multipy(Mat4 m1, Vec v);
 
+/* calculate the transpose of a given matrix, and return the result
+ */
 Mat4 matrix4_transpose(Mat4 m);
 
+/* calculate the inverse of a given matrix, and return the result
+ */
 Mat4 matrix4_invert(Mat4 m);
 
+/* calculate the determinant of a 4x4 matrix, and return the result
+ */
 float matrix4_determinant(Mat4 m);
 
+/* calculate the determinant of a 3x3 matrix, and return the result
+ */
 float matrix3_determinant(Mat3 m);
 
+/* calculate the determinant of a 2x2 matrix, and return the result
+ */
 float matrix2_determinant(Mat2 m);
 
+/* find the 3x3 submatrix of a 4x4 matrix when row i and column j are
+ * removed
+ */
 Mat3 matrix4_submatrix(Mat4 m, int i, int j);
 
+/* find the 2x2 submatrix of a 3x3 matrix when row i and column j are
+ * removed
+ */
 Mat2 matrix3_submatrix(Mat3 m, int i, int j);
 
 float matrix4_minor(Mat4 m, int i, int j);
