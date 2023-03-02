@@ -268,3 +268,14 @@ Mat4 matrix4_identity()
 
     return id;
 }
+
+Mat4 matrix4_translate(float x, float y, float z)
+{
+    Mat4 trans = matrix4_identity();
+
+    trans.A[0][3] = x;
+    trans.A[1][3] = y;
+    trans.A[2][3] = z;
+
+    return trans;
+}
