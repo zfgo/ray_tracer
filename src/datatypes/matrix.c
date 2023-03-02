@@ -1,5 +1,19 @@
-#include "datatypes/matrix.h"
 #include "include.h"
+#include "datatypes/matrix.h"
+
+#include <stdio.h>
+
+void matrix4_print(Mat4 m)
+{
+    int i, j;
+    
+    for (i = 0; i < 4; ++i) {
+        for (j = 0; j < 4; ++j) {
+            printf("%f, ", m.A[i][j]);
+        }
+        printf("\n");
+    }
+}
 
 bool matrix4_equal(Mat4 m1, Mat4 m2)
 {
@@ -48,7 +62,7 @@ bool matrix2_equal(Mat2 m1, Mat2 m2)
 
 Mat4 matrix4_compose(Mat4 m1, Mat4 m2)
 {
-    Mat4 res;
+    Mat4 res = { 0 };
     int i, j, k;
 
     for (i = 0; i < 4; ++i) {
@@ -64,7 +78,7 @@ Mat4 matrix4_compose(Mat4 m1, Mat4 m2)
 
 Vec matrix4_vector_multipy(Mat4 m, Vec v)
 {
-    Vec res;
+    Vec res = { 0 };
     int i, j;
 
     for (i = 0; i < 4; ++i) {
@@ -78,7 +92,7 @@ Vec matrix4_vector_multipy(Mat4 m, Vec v)
 
 Mat4 matrix4_transpose(Mat4 m)
 {
-    Mat4 res;
+    Mat4 res = { 0 };
     int i, j;
 
     for (i = 0; i < 4; ++i) {
@@ -121,7 +135,7 @@ float matrix2_determinant(Mat2 m)
 
 Mat3 matrix4_submatrix(Mat4 m, int r, int c)
 {
-    Mat3 res;
+    Mat3 res = { 0 };
     int i, j;
     int out_i = 0,
         out_j = 0;
@@ -143,7 +157,7 @@ Mat3 matrix4_submatrix(Mat4 m, int r, int c)
 
 Mat2 matrix3_submatrix(Mat3 m, int r, int c)
 {
-    Mat2 res;
+    Mat2 res = { 0 };
     int i, j;
     int out_i = 0,
         out_j = 0;
@@ -165,7 +179,7 @@ Mat2 matrix3_submatrix(Mat3 m, int r, int c)
 
 float matrix4_minor(Mat4 m, int i, int j)
 {
-    Mat3 sub;
+    Mat3 sub = { 0 };
     float det;
 
     sub = matrix4_submatrix(m, i, j);
@@ -176,7 +190,7 @@ float matrix4_minor(Mat4 m, int i, int j)
 
 float matrix3_minor(Mat3 m, int i, int j)
 {
-    Mat2 sub;
+    Mat2 sub = { 0 };
     float det;
 
     sub = matrix3_submatrix(m, i, j); 
@@ -209,7 +223,7 @@ Mat4 matrix4_invert(Mat4 m)
         return m;
     }
 
-    Mat4 res;
+    Mat4 res = { 0 };
     int i, j;
     float c;
     float det = matrix4_determinant(m);
