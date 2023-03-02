@@ -1,5 +1,8 @@
 #include "tests/test_matrix.h"
 
+#include <stdio.h>
+#include "include.h"
+
 void test_matrix4_equal()
 {
     Mat4 a = {
@@ -26,53 +29,62 @@ void test_matrix4_equal()
             {13, 14, 16, 16}
         }
     };
+
+    printf(TEST_PRINT_FORMAT, "test_matrix4_equal()", matrix4_equal(a, b) ? PASS : FAIL);
+    printf(TEST_PRINT_FORMAT, "test_matrix4_equal()", ! matrix4_equal(a, c) ? PASS : FAIL);
 }
 
 void test_matrix3_equal()
 {
-    Mat4 a = {
+    Mat3 a = {
         .A = {
             {1, 2, 3},
             {4, 5, 6},
             {7, 8, 9}
         }
     };
-    Mat4 b = {
+    Mat3 b = {
         .A = {
             {1, 2, 3},
             {4, 5, 6},
             {7, 8, 9}
         }
     };
-    Mat4 c = {
+    Mat3 c = {
         .A = {
             {1, 2, 3},
             {4, 5, 6},
             {8, 8, 9}
         }
     };
+
+    printf(TEST_PRINT_FORMAT, "test_matrix3_equal()", matrix3_equal(a, b) ? PASS : FAIL);
+    printf(TEST_PRINT_FORMAT, "test_matrix3_equal()", ! matrix3_equal(a, c) ? PASS : FAIL);
 }
 
 void test_matrix2_equal()
 {
-    Mat4 a = {
+    Mat2 a = {
         .A = {
             {1, 2},
             {3, 4}
         }
     };
-    Mat4 b = {
+    Mat2 b = {
         .A = {
             {1, 2},
             {3, 4}
         }
     };
-    Mat4 c = {
+    Mat2 c = {
         .A = {
             {1, 2},
             {4, 4}
         }
     };
+
+    printf(TEST_PRINT_FORMAT, "test_matrix2_equal()", matrix2_equal(a, b) ? PASS : FAIL);
+    printf(TEST_PRINT_FORMAT, "test_matrix2_equal()", ! matrix2_equal(a, c) ? PASS : FAIL);
 }
 
 void test_matrix4_compose()
@@ -101,6 +113,7 @@ void test_matrix4_compose()
             {560, 502, 444, 386}
         }
     };
+
 }
 
 void test_matrix4_vector_multiply()
