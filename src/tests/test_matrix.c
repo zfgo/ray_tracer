@@ -160,6 +160,10 @@ void test_matrix4_transpose()
             {4, 8, 12, 16}
         }
     };
+
+    Mat4 res = matrix4_transpose(a);
+
+    printf(TEST_PRINT_FORMAT, "test_matrix4_transpose()", matrix4_equal(b, res) ? PASS : FAIL);
 }
 
 void test_matrix4_determinant()
