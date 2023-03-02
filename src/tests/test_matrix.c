@@ -175,12 +175,27 @@ void test_matrix4_determinant()
             {0, 0, 0, 1}
         }
     };
-    float det = 1.0;
-    float res; // = matrix4_determinant(a);
+    Mat4 b = {
+        .A = {
+            {-2, -8, 3, 5},
+            {-3, 1, 7, 3},
+            {1, 2, -9, 6},
+            {-6, 7, 7, -9}
+        }
+    };
+    float det_a = 1.0;
+    float res_a = matrix4_determinant(a);
 
-    printf("%f\n", res);
+    float det_b = -4071.0;
+    float res_b = matrix4_determinant(b);
 
-    printf(TEST_PRINT_FORMAT, "test_matrix4_determinant()", equal(det, res) ? PASS : FAIL);
+    /*
+    printf("%f\n", res_a);
+    printf("%f\n", res_b);
+    */
+
+    printf(TEST_PRINT_FORMAT, "test_matrix4_determinant()", equal(det_a, res_a) ? PASS : FAIL);
+    printf(TEST_PRINT_FORMAT, "test_matrix4_determinant()", equal(det_b, res_b) ? PASS : FAIL);
 }
 
 void test_matrix3_determinant()
@@ -195,7 +210,7 @@ void test_matrix3_determinant()
     float det = 2.0;
     float res = matrix3_determinant(a);
 
-    printf("%f\n", res);
+    //printf("%f\n", res);
 
     printf(TEST_PRINT_FORMAT, "test_matrix3_determinant()", equal(det, res) ? PASS : FAIL);
 }
