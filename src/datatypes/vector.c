@@ -1,5 +1,7 @@
-#include "datatypes/vector.h"
 #include "include.h"
+#include "datatypes/vector.h"
+
+#include <stdio.h>
 
 bool if_point(Vec v)
 {
@@ -9,6 +11,11 @@ bool if_point(Vec v)
 bool if_vector(Vec v)
 {
     return equal(v.v[3], 0.0);
+}
+
+void vector_print(Vec v)
+{
+    printf("{%f, %f, %f, %f}\n", v.v[0], v.v[1], v.v[2], v.v[3]);
 }
 
 bool vector_equal(Vec v1, Vec v2)

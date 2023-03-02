@@ -42,6 +42,10 @@ bool if_point(Vec v);
  */
 bool if_vector(Vec v);
 
+/* print a given vector to stdout
+ */
+void vector_print(Vec v);
+
 /* check if two vectors are equal
  */
 bool vector_equal(Vec v1, Vec v2);
