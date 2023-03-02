@@ -13,6 +13,9 @@ void test_all()
     test_color_multiply();
     test_color_scalar_multiply();
 
+    /* include tests */
+    test_equal();
+
     /* vector tests */
     test_if_point();
     test_if_vector();
@@ -27,6 +30,13 @@ void test_all()
     test_vector_dot();
     test_vector_cross();
 
-    /* include tests */
-    test_equal();
+    /* matrix tests */
+    test_matrix4_equal();
+    test_matrix3_equal();
+    test_matrix2_equal();
+    test_matrix4_compose();
+    test_matrix4_vector_multiply();
+    test_matrix4_transpose();
+    test_matrix4_determinant();
+    test_matrix4_invert();
 }
