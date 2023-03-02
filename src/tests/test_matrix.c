@@ -163,6 +163,7 @@ void test_matrix4_transpose()
 
     Mat4 res = matrix4_transpose(a);
 
+    printf(TEST_PRINT_FORMAT, "test_matrix4_transpose()", matrix4_equal(b, res) ? PASS : FAIL);
 }
 
 void test_matrix4_determinant()
@@ -189,11 +190,6 @@ void test_matrix4_determinant()
     float det_b = -4071.0;
     float res_b = matrix4_determinant(b);
 
-    /*
-    printf("%f\n", res_a);
-    printf("%f\n", res_b);
-    */
-
     printf(TEST_PRINT_FORMAT, "test_matrix4_determinant()", equal(det_a, res_a) ? PASS : FAIL);
     printf(TEST_PRINT_FORMAT, "test_matrix4_determinant()", equal(det_b, res_b) ? PASS : FAIL);
 }
@@ -209,8 +205,6 @@ void test_matrix3_determinant()
     };
     float det = 2.0;
     float res = matrix3_determinant(a);
-
-    //printf("%f\n", res);
 
     printf(TEST_PRINT_FORMAT, "test_matrix3_determinant()", equal(det, res) ? PASS : FAIL);
 }
@@ -256,4 +250,7 @@ void test_matrix4_invert()
             {0, 0, 0, 1}
         }
     };
+
+    Mat4 res = matrix4_invert(a);
+    printf(TEST_PRINT_FORMAT, "test_matrix4_invert()", matrix4_equal(res, b) ? PASS : FAIL);
 }
