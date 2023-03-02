@@ -38,5 +38,7 @@ void test_all()
     test_matrix4_vector_multiply();
     test_matrix4_transpose();
     test_matrix4_determinant();
+    test_matrix3_determinant();
+    test_matrix2_determinant();
     test_matrix4_invert();
 }
