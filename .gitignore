@@ -7,6 +7,9 @@
 # exclude vim .swp files
 *.swp
 
+# exclude whatever these files are
+.nfs*
+
 # Prerequisites
 *.d
 
