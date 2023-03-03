@@ -41,4 +41,7 @@ void test_all()
     test_matrix3_determinant();
     test_matrix2_determinant();
     test_matrix4_invert();
+
+    /* ray tests */
+    test_ray_position();
 }

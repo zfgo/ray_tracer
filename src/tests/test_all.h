@@ -6,6 +6,7 @@
 #include "tests/test_color.h"
 #include "tests/test_canvas.h"
 #include "tests/test_matrix.h"
+#include "tests/test_ray.h"
 
 void test_all();
 
