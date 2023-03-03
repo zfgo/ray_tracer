@@ -10,4 +10,6 @@ typedef struct ray
     Vec dir;
 } Ray;
 
+Vec ray_position(Ray r, float t);
+
 #endif /* _RAY_H_ */
